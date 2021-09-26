@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
     def index
-        pokemons = Pokemon.all
-        render json: pokemons
+        comments = Comment.all
+        render json: comments
     end 
 end
