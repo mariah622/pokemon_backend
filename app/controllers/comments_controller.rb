@@ -14,6 +14,15 @@ class CommentsController < ApplicationController
         end 
 
     end
+
+    def update 
+        comment = Comment.find_by_id(params[:id])
+        if comment.update(comment_params)
+            render json: comment
+        else 
+            render json: {error: "Could not update comment. Try again."}
+        end 
+    end 
     
     
     private
