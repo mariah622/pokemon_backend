@@ -23,6 +23,12 @@ class CommentsController < ApplicationController
             render json: {error: "Could not update comment. Try again."}
         end 
     end 
+
+    def destroy
+        comment = Comment.find_by_id(params[:id])
+        comment.destroy
+        render json: {message: "Comment has been deleted succesfully!"}
+    end 
     
     
     private
